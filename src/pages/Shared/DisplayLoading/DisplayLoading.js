@@ -3,7 +3,7 @@ import { FidgetSpinner } from "react-loader-spinner";
 
 const DisplayLoading = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center h-[400px]">
       <FidgetSpinner
         visible={true}
         height="80"
