@@ -9,8 +9,8 @@ const SpecialOffer = () => {
 
   useEffect(() => {
     Aos.init({
-      duration: 3000,
-      delay: 500
+      duration: 2000,
+      
       
     })
   }, [])

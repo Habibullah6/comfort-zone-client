@@ -23,7 +23,11 @@ const AllProducts = () => {
 
 
     const handleProductPurchase = (id) => {
-      fetch(`http://localhost:5000/product/${id}`)
+      fetch(`http://localhost:5000/product/${id}`, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem('accessToken')}`
+        }
+      })
       .then(res => res.json())
       .then(data => {
         setProduct(data)
@@ -48,7 +52,7 @@ const AllProducts = () => {
     return (
         <>  
         <ProductsBanner></ProductsBanner>
-        <div className='grid lg:grid-cols-3 gap-10 my-5'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10 my-5'>
             {
             products.map(product => <div key={product._id} className="card  shadow-xl">
             <figure className="px-10 pt-10">

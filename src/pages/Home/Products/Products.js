@@ -43,7 +43,7 @@ const Products = () => {
         Find your shoes from our various collections. Here shoes <br /> is
         endless and profit is also endless.
       </p>
-      <div className="grid lg:grid-cols-3 gap-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
         {products?.slice(0, 6)?.map((product) => (
           <div key={product._id} className="shadow-xl rounded-xl">
             <div className="card-body">

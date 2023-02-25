@@ -5,6 +5,7 @@ import AddProduct from "../../pages/Dashboard/AddProduct/AddProduct";
 import AllUsers from "../../pages/Dashboard/AllUsers/AllUsers";
 import ManageProduct from "../../pages/Dashboard/ManageProduct/ManageProduct";
 import MyPurchase from "../../pages/Dashboard/MyPurchase/MyPurchase";
+import Payment from "../../pages/Dashboard/Payment/Payment";
 import Review from "../../pages/Dashboard/Review/Review";
 import Faqs from "../../pages/Home/Faqs/Faqs";
 import Home from "../../pages/Home/Home/Home";
@@ -54,6 +55,17 @@ const router = createBrowserRouter([
     {
         path: '/dashboard/review',
         element:  <Review></Review> 
+     },
+     {
+        path: '/dashboard/payment/:id',
+        element: <Payment></Payment>,
+        loader: async ({params}) => {
+            return fetch(`http://localhost:5000/purchases/${params.id}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });    
+        }
      },
     {
     path: '/dashboard/allUsers',

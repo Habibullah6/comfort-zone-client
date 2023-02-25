@@ -24,7 +24,10 @@ const Review = () => {
 
     fetch('http://localhost:5000/reviews', {
         method: 'POST',
-        headers: {'content-type': 'application/json'},
+        headers: {
+            authorization: `bearer ${localStorage.getItem('accessToken')}`,
+            'content-type': 'application/json'
+        },
         body: JSON.stringify(review)
     })
     .then(res => res.json())

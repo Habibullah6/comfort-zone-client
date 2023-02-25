@@ -74,14 +74,14 @@ export default function CustomReview() {
         className="mySwiper mt-5 p-10"
       >
         {reviews.map((review) => (
-          <SwiperSlide className="rounded-lg" key={review._id}>
-            <div className="shadow-xl  p-5">
+          <SwiperSlide className="rounded-lg shadow-xl" key={review._id}>
+            <div className="  p-5">
               <div className="avatar">
                 <div className="w-16 rounded-full">
                   <img src={review.img} />
                 </div>
               </div>
-              <p className="mt-5">{review.description}</p>
+              <p className="mt-5 text-justify">{review.description}</p>
               <div className="mt-5 flex justify-center">
               <DynamicStar
                 rating={review.rating}

@@ -20,11 +20,17 @@ const ManageProduct = () => {
     return <DisplayLoading></DisplayLoading>;
   }
 
+  
+
   const handleProductDelete = (id) => {
     fetch(`http://localhost:5000/product/${id}`, {
         method: 'Delete',
+        headers: {
+          authorization: `bearer ${localStorage.getItem('accessToken')}`
+        }
         
     })
+    
     .then(res => res.json())
     .then(data => {
         if(data.deletedCount>0){

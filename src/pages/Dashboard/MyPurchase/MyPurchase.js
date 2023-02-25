@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import DisplayLoading from '../../Shared/DisplayLoading/DisplayLoading';
 import DisplayModal from '../../Shared/DisplayModal/DisplayModal';
@@ -32,7 +33,10 @@ const MyPurchase = () => {
     const handlePurchaseDelete = (id) => {
       fetch(`http://localhost:5000/purchases/${id}`, {
         method: 'DELETE',
-        
+        headers: {
+          authorization: `bearer ${localStorage.getItem('accessToken')}`,
+          
+        }
       })
       .then(res => res.json())
       .then(data => {
@@ -79,7 +83,7 @@ const MyPurchase = () => {
 
            <td>
            {
-            purchase.paid ? <span>Paid</span> : <button className='btn btn-sm btn-accent'>Pay</button>
+            purchase.paid ? <span>Paid</span> : <Link to={`/dashboard/payment/${purchase._id}`} className='btn btn-sm btn-accent'>Pay</Link>
             }
            </td>
 
