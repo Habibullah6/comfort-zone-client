@@ -33,3 +33,11 @@
 * Git
 * Github
 
+<hr>
+
+#### If you want to check this web app as an admin please use this email and password.
+email: admin@admin.com
+password: 123456
+
+### Thanks you so much for visiting my repository.
+

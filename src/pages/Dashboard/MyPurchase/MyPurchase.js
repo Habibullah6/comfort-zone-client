@@ -83,12 +83,18 @@ const MyPurchase = () => {
 
            <td>
            {
-            purchase.paid ? <span>Paid</span> : <Link to={`/dashboard/payment/${purchase._id}`} className='btn btn-sm btn-accent'>Pay</Link>
+            purchase?.paid ? <span>Paid</span> : <Link to={`/dashboard/payment/${purchase._id}`} className='btn btn-sm btn-accent'>Pay</Link>
             }
            </td>
 
 
-            <td><label onClick={() => setDeletePurchase(purchase)}  htmlFor="my-modal-6"  className='btn btn-sm btn-primary'>Delete</label></td>
+            <td>
+
+             {
+              purchase?.paid ? '':  <label onClick={() => setDeletePurchase(purchase)}  htmlFor="my-modal-6"  className='btn btn-sm btn-primary'>Cancel</label>
+             }
+
+            </td>
           </tr>)
       }
      
