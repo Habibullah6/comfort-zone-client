@@ -13,6 +13,7 @@
 * In review route customer can Review our site. They can also add ratting.
 * In add-product route Admin can add more products.
 * In manage-products route Admin can see all Products. In this route Admin can  delete any products.
+* In all-users route Admin can make a user admin
 
 ### Technology
 
