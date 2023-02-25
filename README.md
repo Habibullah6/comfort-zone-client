@@ -14,3 +14,21 @@
 * In add-product route Admin can add more products.
 * In manage-products route Admin can see all Products. In this route Admin can  delete any products.
 
+### Technology
+
+<hr>
+
+* React.js
+* Node.js
+* Express.js
+* MongoDB
+* Firebase
+
+### Tools
+
+<hr>
+
+* VS code
+* Git
+* Github
+
