@@ -1,4 +1,6 @@
-### Description
+### Description 
+
+<hr>
 
 * This is a simple E-commerce Web application.
 * In this application we can see some products. Which is basically load from database.
